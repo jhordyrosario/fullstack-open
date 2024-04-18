@@ -5,10 +5,10 @@ const Button = ({onClick, text}) => (
 )
 
 const StatisticLine = ({title, value}) => (
-  <>
-    <label>{title} {value}</label>
-    <br/>
-  </>
+  <tr>
+    <td>{title}</td> 
+    <td>{value}</td>
+  </tr>
 )
 
 const Statistics = ({data}) => {
@@ -21,14 +21,16 @@ const Statistics = ({data}) => {
   }
 
   return (
-    <>
-      <StatisticLine title={"good"} value={data.good} />
-      <StatisticLine title={"neutral"} value={data.neutral} />
-      <StatisticLine title={"bad"} value={data.bad} />
-      <StatisticLine title={"all"} value={data.all} />
-      <StatisticLine title={"average"} value={data.average} />
-      <StatisticLine title={"positive"} value={data.positive*100 + " %"} />
-    </>
+    <table>
+      <tbody>
+        <StatisticLine title={"good"} value={data.good} />
+        <StatisticLine title={"neutral"} value={data.neutral} />
+        <StatisticLine title={"bad"} value={data.bad} />
+        <StatisticLine title={"all"} value={data.all} />
+        <StatisticLine title={"average"} value={data.average} />
+        <StatisticLine title={"positive"} value={data.positive*100 + " %"} />
+      </tbody>
+    </table>
   )
 }
 
