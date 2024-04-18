@@ -12,6 +12,13 @@ const StatisticsLabel = ({title, value}) => (
 )
 
 const Statistics = (props) => {
+  if (props.all === 0) {
+    return(
+      <p>
+        No feedback given
+      </p>
+    )
+  }
 
   return (
     <>
